@@ -1,0 +1,16 @@
+/*----Fonts----*/
+
+
+/*----Colours----*/
+
+.bg-color-gamearea {
+    background-color: cornflowerblue;
+}
+
+.bg-color-scorearea {
+    background-color: lightblue;
+}
+
+.bg-color-devarea {
+    background-color: dodgerblue;
+}

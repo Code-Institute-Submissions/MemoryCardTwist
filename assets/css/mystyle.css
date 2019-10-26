@@ -1,16 +1,70 @@
 /*----Fonts----*/
 
 
-/*----Colours----*/
+/*----Areas----*/
 
-.bg-color-gamearea {
+body {
+    background-color: #007bff;
+}
+
+#game_area {
     background-color: cornflowerblue;
+    /*border: black 1px solid;*/
+    /*width: auto;*/
+    /*height: 80vh;*/
+    padding: 24px;
+    /*margin: 0px auto;*/
 }
 
-.bg-color-scorearea {
+#score_area {
     background-color: lightblue;
+    /*border: black 1px solid;*/
+    /*width: auto;*/
+    /*height: 60vh;*/
+    padding: 24px;
+    /*margin: 0px auto;*/
 }
 
-.bg-color-devarea {
+#dev_area {
     background-color: dodgerblue;
+    /*border: black 1px solid;*/
+    /*width: auto;*/
+    /*height: 20vh;*/
+    padding: 24px;
+    /*margin: 0px auto;*/
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 0px;
+    grid-auto-rows: minmax(100px, auto);
+    height: 80vh;
+}
+
+.wrapper>div {
+    border: 1px solid rgb(0, 0, 0);
+    border-radius: 5px;
+    background-color: rgba(233, 171, 88, .5);
+    padding: 1em;
+    color: #d9480f;
+}
+
+.gamearea {
+    grid-column: 1 / 3;
+    grid-row: 1 / 8;
+}
+
+.scorearea {
+    grid-column: 3 / 3;
+    grid-row: 1 / 6;
+}
+
+.devarea {
+    grid-column: 3;
+    grid-row: 6 / 8;
 }

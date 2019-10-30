@@ -20,7 +20,7 @@
     
     #game_area {
         background-color: cornflowerblue;
-        height: 80vh;
+        height: 90vh;
     }
     
     #score_area {
@@ -30,8 +30,8 @@
     }
     
     #dev_area {
-        background-color: dodgerblue;
-        height: 20vh;
+        background-color: rgb(125, 170, 216);
+        height: 30vh;
     }
     /*----Media Queries----*/
     

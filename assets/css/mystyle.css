@@ -37,14 +37,15 @@
     
     #game_area>div {
         background: url("../imgs/cardImg.jpg") no-repeat;
-        background-size: 164px 118px;
+        background-size: cover;
         border: black 1px solid;
-        width: 164px;
-        height: 118px;
+        width: 24%;
+        height: 16%;
         float: left;
         margin: 1px;
         padding: 5px;
-        font-size: 32px;
+        padding-top: 16px;
+        font-size: 55px;
         cursor: pointer;
         text-align: center;
     }

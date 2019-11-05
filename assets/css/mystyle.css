@@ -33,6 +33,21 @@
         background-color: rgb(125, 170, 216);
         height: 30vh;
     }
+    /*----Card Formating----*/
+    
+    #game_area>div {
+        background: url("../imgs/cardImg.jpg") no-repeat;
+        background-size: 164px 118px;
+        border: black 1px solid;
+        width: 164px;
+        height: 118px;
+        float: left;
+        margin: 1px;
+        padding: 5px;
+        font-size: 32px;
+        cursor: pointer;
+        text-align: center;
+    }
     /*----Media Queries----*/
     
     @media(min-width: 992px) {}

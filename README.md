@@ -17,6 +17,10 @@ This will be designed to allow users to Start New Games, and Pause the Game.  Th
 ### Game Area
 This is where the game is actually housed in.
 
+I have tried to create a grid of 4 by 6, and as my Card faces I have used the actual code as the image.
+
+To keep in with the computing theme, the card values are 1 to 12 in Binary.  Instead of the 1 - 12 or A - L.
+
 ### Leaderboard Area
 For the competitive players this allows them to see whos fastest.
 

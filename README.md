@@ -21,6 +21,8 @@ I have tried to create a grid of 4 by 6, and as my Card faces I have used the ac
 
 To keep in with the computing theme, the card values are 1 to 12 in Binary.  Instead of the 1 - 12 or A - L.
 
+I have completed the basic game where, when you click on 2 matching cards they will disappear and reveal the board area underneath.  I will be adding the random characters in later.
+
 ### Leaderboard Area
 For the competitive players this allows them to see whos fastest.
 

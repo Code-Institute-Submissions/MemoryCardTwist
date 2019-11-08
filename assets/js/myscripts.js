@@ -2,6 +2,7 @@ var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100',
 var cardValues = []; //Empty array
 var cardIds = []; //Empty array
 var cardFlipped = []; //Empty array
+var turnsTaken = 0;
 
 Array.prototype.cardShuffle = function() {
     var n = this.length,
@@ -16,6 +17,7 @@ Array.prototype.cardShuffle = function() {
 
 function newGame() {
     cardFlipped = 0;
+    turnsTaken = 0;
     var out = '';
     cardArray.cardShuffle();
     for (var i = 0; i < cardArray.length; i++) {
@@ -30,11 +32,15 @@ function freshGame() {
 }
 
 function cardFlip(card, val) {
+    //turnCounting();
+    //Flipping Cards
     if (card.innerHTML == "" && cardValues.length < 2) { //If the cards match
+
         card.style.background = '#FFF';
         card.style.backgroundImage = 'radial-gradient(lightblue, cornflowerblue)'; //Displays a circle of light blue, behind the text
         card.innerHTML = val;
         if (cardValues.length == 0) {
+            turnCounting();
             cardValues.push(val); //Push the Value into the array
             cardIds.push(card.id); //Push the Card Id into the array
         } else if (cardValues.length == 1) {
@@ -50,10 +56,10 @@ function cardFlip(card, val) {
                 cardIds = []; // Clear array
                 // Check to see if the whole board is cleared
                 if (cardFlipped == cardArray.length) { //If all the cards have been flipped
-                    alert("Game Completed, lets see where you have come on the Leader Board");
+                    alert("Game Completed, you have taken " + turnsTaken + " turns to complete the game.  Lets see where you have come on the Leader Board");
                     document.getElementById('game_area').innerHTML = "";
                     //insert function to update the Leader board
-                    freshGame();
+                    newGame();
                 }
             } else { //This will run if there are no matches
                 function flipOver() {
@@ -73,4 +79,26 @@ function cardFlip(card, val) {
             }
         }
     }
+}
+
+function turnCounting() {
+    //Counting the turns
+    var turnsTakenString;
+    turnsTaken++;
+    turnsTaken.toString();
+    console.log(turnsTaken);
+    turnsTakenString = "Turns Taken: " + turnsTaken;
+    document.getElementById("turnCounter").innerHTML = turnsTakenString;
+}
+
+function playerOptions() {
+    var playerName;
+    var person = prompt("Please enter your name:", "Ready Player One");
+    if (person == null || person == "") {
+        playerName = "Guest";
+    } else {
+        playerName = person;
+    }
+    document.getElementById("playerName").innerHTML = playerName;
+    newGame();
 }

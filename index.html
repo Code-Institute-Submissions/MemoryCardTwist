@@ -10,7 +10,7 @@
     <title>Memory Card Twist</title>
 </head>
 
-<body onload="newGame()">
+<body onload="playerOptions()">
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">M-C-T</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -29,12 +29,9 @@
 
                     </div>
                 </li>
-                <span class="navbar-text">
-                Time Taken:
-              </span>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">Turns Taken: </a>
-                </li>
+                <span class="navbar-text" id="playerName">Guest  </span>
+                <span class="navbar-text" id="turnCounter"> </span>
+                <span class="navbar-text" id="timeCounter">Time Taken  </span>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="guess" placeholder="Guess" aria-label="guess">
@@ -57,7 +54,7 @@
                     <div class="bg-color-devarea areaSetup" id="dev_area">
                         <h3>Created by: Stephen Jackson</h3>
                         <p>This is a project for me to practise my Javascript learning with a bit of html and css.</p>
-                        <p>My github is: <a href="https://github.com/jjackson19862017">My Github</a></p>
+                        <p>My github is: <a href="https://github.com/jjackson19862017" target="_blank">My Github</a></p>
                     </div>
                 </div>
             </div>
@@ -70,6 +67,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <script src="assets/js/myscripts.js"></script>
+
 </body>
 
 </html>

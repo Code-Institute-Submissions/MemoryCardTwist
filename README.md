@@ -28,3 +28,8 @@ For the competitive players this allows them to see whos fastest.
 
 ### Dev Area
 This is for the developer aka me to leave some information.
+
+## Support
+
+### Adam Khoury
+He created a video tutorial for understanding of how to build the initial game.

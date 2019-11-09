@@ -2,7 +2,8 @@ var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100',
 var cardValues = []; //Empty array
 var cardIds = []; //Empty array
 var cardFlipped = []; //Empty array
-var turnsTaken = 0;
+var turnsTaken = 0; //Counts up everytime a selection is made
+var gamesPlayed = 0; //This will be used in the Player naming and in the Leaderboard
 
 Array.prototype.cardShuffle = function() {
     var n = this.length,
@@ -16,13 +17,15 @@ Array.prototype.cardShuffle = function() {
 };
 
 function newGame() {
-    cardFlipped = 0;
-    turnsTaken = 0;
+    cardFlipped = 0; //Reset Value
+    turnsTaken = 0; //Reset Value
     var out = '';
     cardArray.cardShuffle();
     for (var i = 0; i < cardArray.length; i++) {
         out += '<div id="card_' + i + '" onclick="cardFlip(this,\'' + cardArray[i] + '\')"></div>';
     }
+    turnsTakenString = ""; //Hides the text so that it doesnt look unsightly
+    document.getElementById("turnCounter").innerHTML = turnsTakenString;
     document.getElementById('game_area').innerHTML = out;
 };
 
@@ -50,8 +53,8 @@ function cardFlip(card, val) {
                 cardFlipped += 2;
                 var card1 = document.getElementById(cardIds[0]);
                 var card2 = document.getElementById(cardIds[1]);
-                card1.style.visibility = 'hidden';
-                card2.style.visibility = 'hidden';
+                card1.style.visibility = 'hidden'; //Once match is made hide the cards
+                card2.style.visibility = 'hidden'; //Once match is made hide the cards
                 cardValues = []; // Clear array
                 cardIds = []; // Clear array
                 // Check to see if the whole board is cleared
@@ -59,7 +62,8 @@ function cardFlip(card, val) {
                     alert("Game Completed, you have taken " + turnsTaken + " turns to complete the game.  Lets see where you have come on the Leader Board");
                     document.getElementById('game_area').innerHTML = "";
                     //insert function to update the Leader board
-                    newGame();
+                    gamesPlayed++;
+                    playerOptions();
                 }
             } else { //This will run if there are no matches
                 function flipOver() {
@@ -93,8 +97,15 @@ function turnCounting() {
 
 function playerOptions() {
     var playerName;
-    var person = prompt("Please enter your name:", "Ready Player One");
-    if (person == null || person == "") {
+    var exampleName;
+    if (gamesPlayed == 0) {
+        exampleName = "Ready Player One";
+    } else {
+        exampleName = playerName;
+    }
+
+    var person = prompt("Please enter your name:", exampleName);
+    if (person == null || person == "" || person == exampleName) {
         playerName = "Guest";
     } else {
         playerName = person;

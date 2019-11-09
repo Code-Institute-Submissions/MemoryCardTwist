@@ -23,6 +23,8 @@ To keep in with the computing theme, the card values are 1 to 12 in Binary.  Ins
 
 I have completed the basic game where, when you click on 2 matching cards they will disappear and reveal the board area underneath.  I will be adding the random characters in later.
 
+I have added the ability for the Player to add their name, this will be used for the Leaderboard later on.
+
 ### Leaderboard Area
 For the competitive players this allows them to see whos fastest.
 

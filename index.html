@@ -10,7 +10,8 @@
     <title>Memory Card Twist</title>
 </head>
 
-<body onload="playerOptions()">
+<body>
+    <!--<body onload="playerOptions()">-->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <a class="navbar-brand" href="#">M-C-T</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -19,19 +20,10 @@
 
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav mr-auto">
-                <li class="nav-item dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                Game Options
-              </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">New Game</a>
-                        <a class="dropdown-item" href="#">Pause Game</a>
-
-                    </div>
-                </li>
-                <span class="navbar-text" id="playerName">Guest  </span>
+                <a class="btn btn-outline-light btn-small" onClick="playerOptions();" href=# role="button">New Game</a>
+                <span class="navbar-text" id="playerName"></span>
                 <span class="navbar-text" id="turnCounter"> </span>
-                <span class="navbar-text" id="timeCounter">Time Taken  </span>
+                <span class="navbar-text" id="timeCounter"></span>
             </ul>
             <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="guess" placeholder="Guess" aria-label="guess">
@@ -98,16 +90,8 @@
                                     <th scope="row">8</th>
                                     <td>aaa</td>
                                     <td>0</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">9</th>
-                                    <td>aaa</td>
-                                    <td>0</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">10</th>
-                                    <td>aaa</td>
-                                    <td>0</td>
+
+
                                 </tr>
                             </tbody>
                         </table>

@@ -70,10 +70,10 @@ function cardFlip(card, val) {
                     // Flip the 2 tiles back over
                     var card1 = document.getElementById(cardIds[0]);
                     var card2 = document.getElementById(cardIds[1]);
-                    card1.style.background = 'url("assets/imgs/cardImg.jpg") no-repeat';
+                    card1.style.background = 'radial-gradient(lightblue, #007bff)';
                     card1.style.backgroundSize = "cover";
                     card1.innerHTML = "";
-                    card2.style.background = 'url("assets/imgs/cardImg.jpg") no-repeat';
+                    card2.style.background = 'radial-gradient(lightblue, #007bff)';
                     card2.style.backgroundSize = "cover";
                     card2.innerHTML = "";
                     cardValues = []; // Clear array

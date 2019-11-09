@@ -45,7 +45,7 @@
         position: relative;
         left: 9px;
         top: 10px;
-        background: url("../imgs/cardImg.jpg") no-repeat;
+        background: radial-gradient(lightblue, #007bff);
         background-size: cover;
         border: black 1px solid;
         width: 24%;

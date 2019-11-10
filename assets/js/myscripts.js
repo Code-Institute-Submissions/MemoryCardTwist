@@ -3,7 +3,65 @@ var cardValues = []; //Empty array
 var cardIds = []; //Empty array
 var cardFlipped = []; //Empty array
 var turnsTaken = 0; //Counts up everytime a selection is made
-var gamesPlayed = 0; //This will be used in the Player naming and in the Leaderboard
+var playerArray = []; //Empty array for player names
+var scoreArray = []; //Empty array for Leaderboard
+var playerName; //Users actual name
+var exampleName; //Default name
+var leaderArray = []; //Multidimensional Array for the player names and scores
+var updateLeaderboard = "";
+updateLeaderboard += "<table class=\"table table-borderless\">";
+updateLeaderboard += "                            <caption>List of scores from different players.<\/caption>";
+updateLeaderboard += "                            <thead class=\"thead-dark\">";
+updateLeaderboard += "                                <tr class=\"table-info\">";
+updateLeaderboard += "                                    <th scope=\"col\">#<\/th>";
+updateLeaderboard += "                                    <th scope=\"col\">Name<\/th>";
+updateLeaderboard += "                                    <th scope=\"col\">Turns<\/th>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                            <\/thead>";
+updateLeaderboard += "                            <tbody>";
+updateLeaderboard += "                                <tr class=\"table gold\">";
+updateLeaderboard += "                                    <th scope=\"row\">1<\/th>";
+updateLeaderboard += "                                    <td>aaa<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr class=\"table silver\">";
+updateLeaderboard += "                                    <th scope=\"row\">2<\/th>";
+updateLeaderboard += "                                    <td>bbb<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr class=\"table bronze\">";
+updateLeaderboard += "                                    <th scope=\"row\">3<\/th>";
+updateLeaderboard += "                                    <td>ccc<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr>";
+updateLeaderboard += "                                    <th scope=\"row\">4<\/th>";
+updateLeaderboard += "                                    <td>ddd<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr>";
+updateLeaderboard += "                                    <th scope=\"row\">5<\/th>";
+updateLeaderboard += "                                    <td>eee<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr>";
+updateLeaderboard += "                                    <th scope=\"row\">6<\/th>";
+updateLeaderboard += "                                    <td>fff<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr>";
+updateLeaderboard += "                                    <th scope=\"row\">7<\/th>";
+updateLeaderboard += "                                    <td>ggg<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                <tr>";
+updateLeaderboard += "                                    <th scope=\"row\">8<\/th>";
+updateLeaderboard += "                                    <td>hhh<\/td>";
+updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                            <\/tbody>";
+updateLeaderboard += "                        <\/table>";
+
 
 Array.prototype.cardShuffle = function() {
     var n = this.length,
@@ -27,18 +85,18 @@ function newGame() {
     turnsTakenString = ""; //Hides the text so that it doesnt look unsightly
     document.getElementById("turnCounter").innerHTML = turnsTakenString;
     document.getElementById('game_area').innerHTML = out;
+    document.getElementById("score_area").innerHTML = updateLeaderboard;
 };
 
 function freshGame() {
     newGame();
-    alert("New Game");
+    //alert("New Game");
 }
 
 function cardFlip(card, val) {
     //turnCounting();
     //Flipping Cards
     if (card.innerHTML == "" && cardValues.length < 2) { //If the cards match
-
         card.style.background = '#FFF';
         card.style.backgroundImage = 'radial-gradient(lightblue, cornflowerblue)'; //Displays a circle of light blue, behind the text
         card.innerHTML = val;
@@ -61,9 +119,9 @@ function cardFlip(card, val) {
                 if (cardFlipped == cardArray.length) { //If all the cards have been flipped
                     alert("Game Completed, you have taken " + turnsTaken + " turns to complete the game.  Lets see where you have come on the Leader Board");
                     document.getElementById('game_area').innerHTML = "";
-                    //insert function to update the Leader board
-                    gamesPlayed++;
-                    playerOptions();
+
+                    playerOptions(); // Take players name
+                    results(); //Leaderboard functions
                 }
             } else { //This will run if there are no matches
                 function flipOver() {
@@ -87,29 +145,86 @@ function cardFlip(card, val) {
 
 function turnCounting() {
     //Counting the turns
-    var turnsTakenString;
-    turnsTaken++;
-    turnsTaken.toString();
-    console.log(turnsTaken);
-    turnsTakenString = "Turns Taken: " + turnsTaken;
-    document.getElementById("turnCounter").innerHTML = turnsTakenString;
+    var turnsTakenString; //variable
+    turnsTaken++; //Add 1 to the variable
+    turnsTaken.toString(); //Convert from number to string
+    turnsTakenString = "Turns Taken: " + turnsTaken; //Puts the string together
+    document.getElementById("turnCounter").innerHTML = turnsTakenString; //Updates the html in real time
 }
 
 function playerOptions() {
-    var playerName;
-    var exampleName;
-    if (gamesPlayed == 0) {
-        exampleName = "Ready Player One";
-    } else {
-        exampleName = playerName;
-    }
-
+    exampleName = "Ready Player One";
     var person = prompt("Please enter your name:", exampleName);
     if (person == null || person == "" || person == exampleName) {
         playerName = "Guest";
     } else {
         playerName = person;
     }
-    document.getElementById("playerName").innerHTML = playerName;
-    newGame();
+    //document.getElementById("playerName").innerHTML = playerName; //Puts the name into the HTML ID Tag playerName
+    //newGame();
+}
+
+function results() {
+    console.log(playerName);
+    console.log(turnsTaken);
+    playerArray.push(playerName);
+    scoreArray.push(turnsTaken);
+    console.log(playerArray);
+    console.log(scoreArray);
+    leaderArray.push([turnsTaken, playerName]);
+    console.log(leaderArray);
+    var updateLeaderboard = "";
+    updateLeaderboard += "<thead class=\"thead-dark\">";
+    updateLeaderboard += "                                <tr class=\"table-info\">";
+    updateLeaderboard += "                                    <th scope=\"col\">#<\/th>";
+    updateLeaderboard += "                                    <th scope=\"col\">Name<\/th>";
+    updateLeaderboard += "                                    <th scope=\"col\">Turns<\/th>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                            <\/thead>";
+    updateLeaderboard += "                            <tbody>";
+    updateLeaderboard += "                                <tr class=\"table gold\">";
+    updateLeaderboard += "                                    <th scope=\"row\">1<\/th>";
+    updateLeaderboard += "                                    <td>aaa<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr class=\"table silver\">";
+    updateLeaderboard += "                                    <th scope=\"row\">2<\/th>";
+    updateLeaderboard += "                                    <td>bbb<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr class=\"table bronze\">";
+    updateLeaderboard += "                                    <th scope=\"row\">3<\/th>";
+    updateLeaderboard += "                                    <td>ccc<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr>";
+    updateLeaderboard += "                                    <th scope=\"row\">4<\/th>";
+    updateLeaderboard += "                                    <td>ddd<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr>";
+    updateLeaderboard += "                                    <th scope=\"row\">5<\/th>";
+    updateLeaderboard += "                                    <td>eee<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr>";
+    updateLeaderboard += "                                    <th scope=\"row\">6<\/th>";
+    updateLeaderboard += "                                    <td>fff<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr>";
+    updateLeaderboard += "                                    <th scope=\"row\">7<\/th>";
+    updateLeaderboard += "                                    <td>ggg<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                <tr>";
+    updateLeaderboard += "                                    <th scope=\"row\">8<\/th>";
+    updateLeaderboard += "                                    <td>hhh<\/td>";
+    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "";
+    updateLeaderboard += "";
+    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                            <\/tbody>";
+
+    document.getElementById("score_area").innerHTML = updateLeaderboard;
 }

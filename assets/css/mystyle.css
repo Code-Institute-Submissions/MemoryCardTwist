@@ -1,9 +1,18 @@
     /*----Fonts----*/
+    /*----Colours----*/
+    
+    .text-white {
+        color: white;
+    }
     /*----Alignment----*/
     
     .navbar-text {
         padding-right: 10px;
         padding-left: 10px;
+    }
+    
+    .central {
+        text-align: center;
     }
     /*----Areas----*/
     

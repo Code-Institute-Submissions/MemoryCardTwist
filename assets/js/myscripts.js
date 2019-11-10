@@ -7,7 +7,16 @@ var playerArray = []; //Empty array for player names
 var scoreArray = []; //Empty array for Leaderboard
 var playerName; //Users actual name
 var exampleName; //Default name
-var leaderArray = []; //Multidimensional Array for the player names and scores
+var leaderArray = [
+    [999, "aaa"],
+    [999, "bbb"],
+    [999, "ccc"],
+    [999, "ddd"],
+    [999, "eee"],
+    [999, "fff"],
+    [999, "ggg"],
+    [999, "hhh"]
+]; //Multidimensional Array for the player names and scores
 var updateLeaderboard = "";
 updateLeaderboard += "<table class=\"table table-borderless\">";
 updateLeaderboard += "                            <caption>List of scores from different players.<\/caption>";
@@ -21,48 +30,80 @@ updateLeaderboard += "                            <\/thead>";
 updateLeaderboard += "                            <tbody>";
 updateLeaderboard += "                                <tr class=\"table gold\">";
 updateLeaderboard += "                                    <th scope=\"row\">1<\/th>";
-updateLeaderboard += "                                    <td>aaa<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[0][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[0][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr class=\"table silver\">";
 updateLeaderboard += "                                    <th scope=\"row\">2<\/th>";
-updateLeaderboard += "                                    <td>bbb<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
-updateLeaderboard += "                                <\/tr>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[1][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[1][0];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                               <\/tr>";
 updateLeaderboard += "                                <tr class=\"table bronze\">";
 updateLeaderboard += "                                    <th scope=\"row\">3<\/th>";
-updateLeaderboard += "                                    <td>ccc<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[2][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[2][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr>";
 updateLeaderboard += "                                    <th scope=\"row\">4<\/th>";
-updateLeaderboard += "                                    <td>ddd<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[3][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[3][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr>";
 updateLeaderboard += "                                    <th scope=\"row\">5<\/th>";
-updateLeaderboard += "                                    <td>eee<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[4][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[4][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr>";
 updateLeaderboard += "                                    <th scope=\"row\">6<\/th>";
-updateLeaderboard += "                                    <td>fff<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[5][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[5][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr>";
 updateLeaderboard += "                                    <th scope=\"row\">7<\/th>";
-updateLeaderboard += "                                    <td>ggg<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[6][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[6][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                                <tr>";
 updateLeaderboard += "                                    <th scope=\"row\">8<\/th>";
-updateLeaderboard += "                                    <td>hhh<\/td>";
-updateLeaderboard += "                                    <td>0<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[7][1];
+updateLeaderboard += "<\/td>";
+updateLeaderboard += "                                    <td>"
+updateLeaderboard += leaderArray[7][0];
+updateLeaderboard += "<\/td>";
 updateLeaderboard += "                                <\/tr>";
 updateLeaderboard += "                            <\/tbody>";
 updateLeaderboard += "                        <\/table>";
-
-
+console.log(leaderArray[0][1]);
+console.log(leaderArray[0][0]);
 Array.prototype.cardShuffle = function() {
     var n = this.length,
         m, temp;
@@ -174,7 +215,9 @@ function results() {
     leaderArray.push([turnsTaken, playerName]);
     console.log(leaderArray);
     var updateLeaderboard = "";
-    updateLeaderboard += "<thead class=\"thead-dark\">";
+    updateLeaderboard += "<table class=\"table table-borderless\">";
+    updateLeaderboard += "                            <caption>List of scores from different players.<\/caption>";
+    updateLeaderboard += "                            <thead class=\"thead-dark\">";
     updateLeaderboard += "                                <tr class=\"table-info\">";
     updateLeaderboard += "                                    <th scope=\"col\">#<\/th>";
     updateLeaderboard += "                                    <th scope=\"col\">Name<\/th>";
@@ -184,47 +227,78 @@ function results() {
     updateLeaderboard += "                            <tbody>";
     updateLeaderboard += "                                <tr class=\"table gold\">";
     updateLeaderboard += "                                    <th scope=\"row\">1<\/th>";
-    updateLeaderboard += "                                    <td>aaa<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[0][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[0][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr class=\"table silver\">";
     updateLeaderboard += "                                    <th scope=\"row\">2<\/th>";
-    updateLeaderboard += "                                    <td>bbb<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
-    updateLeaderboard += "                                <\/tr>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[1][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[1][0];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                               <\/tr>";
     updateLeaderboard += "                                <tr class=\"table bronze\">";
     updateLeaderboard += "                                    <th scope=\"row\">3<\/th>";
-    updateLeaderboard += "                                    <td>ccc<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[2][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[2][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr>";
     updateLeaderboard += "                                    <th scope=\"row\">4<\/th>";
-    updateLeaderboard += "                                    <td>ddd<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[3][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[3][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr>";
     updateLeaderboard += "                                    <th scope=\"row\">5<\/th>";
-    updateLeaderboard += "                                    <td>eee<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[4][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[4][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr>";
     updateLeaderboard += "                                    <th scope=\"row\">6<\/th>";
-    updateLeaderboard += "                                    <td>fff<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[5][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[5][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr>";
     updateLeaderboard += "                                    <th scope=\"row\">7<\/th>";
-    updateLeaderboard += "                                    <td>ggg<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[6][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[6][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                                <tr>";
     updateLeaderboard += "                                    <th scope=\"row\">8<\/th>";
-    updateLeaderboard += "                                    <td>hhh<\/td>";
-    updateLeaderboard += "                                    <td>0<\/td>";
-    updateLeaderboard += "";
-    updateLeaderboard += "";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[7][1];
+    updateLeaderboard += "<\/td>";
+    updateLeaderboard += "                                    <td>"
+    updateLeaderboard += leaderArray[7][0];
+    updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                            <\/tbody>";
+    updateLeaderboard += "                        <\/table>";
 
     document.getElementById("score_area").innerHTML = updateLeaderboard;
 }

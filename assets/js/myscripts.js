@@ -1,17 +1,17 @@
 debugger;
-var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
-var cardValues = []; //Empty array
-var cardIds = []; //Empty array
-var cardFlipped = []; //Empty array
-var turnsTaken = 0; //Counts up everytime a selection is made
-var playerArray = []; //Empty array for player names
-var scoreArray = []; //Empty array for Leaderboard
-var playerName; //Users actual name
-var exampleName; //Default name
-var leaderArray = [];
-var gamesplayed = 0;
+//var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
+//var cardValues = []; //Empty array
+//var cardIds = []; //Empty array
+//var cardFlipped = []; //Empty array
+//var turnsTaken = 0; //Counts up everytime a selection is made
+//var playerArray = []; //Empty array for player names
+//var scoreArray = []; //Empty array for Leaderboard
+//var playerName; //Users actual name
+//var exampleName; //Default name
+//var leaderArray = [];
+//var gamesplayed = 0;
 
-if (gamesplayed == 0) {
+/*if (gamesplayed == 0) {
     var leaderArray = [
         [999, "aaa"],
         [999, "bbb"],
@@ -22,11 +22,11 @@ if (gamesplayed == 0) {
         [999, "ggg"],
         [999, "hhh"]
     ]; //Multidimensional Array for the player names and scores
-};
+};*/
 
-var updateLeaderboard = "";
+//var updateLeaderboard = "";
 
-Array.prototype.cardShuffle = function() {
+/*Array.prototype.cardShuffle = function() {
     var n = this.length,
         m, temp;
     while (--n > 0) {
@@ -35,9 +35,9 @@ Array.prototype.cardShuffle = function() {
         this[m] = this[n];
         this[n] = temp;
     }
-};
+};*/
 
-function newGame() {
+/*function newGame() {
     updateLeaderboard += "<table class=\"table table-borderless\">";
     updateLeaderboard += "                            <caption>List of scores from different players.<\/caption>";
     updateLeaderboard += "                            <thead class=\"thead-dark\">";
@@ -135,13 +135,13 @@ function newGame() {
     document.getElementById('game_area').innerHTML = out;
     document.getElementById("score_area").innerHTML = updateLeaderboard;
     gamesplayed++;
-};
+};*/
 
 function freshGame() {
     newGame();
 }
 
-function cardFlip(card, val) {
+/*function cardFlip(card, val) {
     //turnCounting();
     //Flipping Cards
     if (card.innerHTML == "" && cardValues.length < 2) { //If the cards match
@@ -197,9 +197,9 @@ function turnCounting() {
     turnsTaken.toString(); //Convert from number to string
     turnsTakenString = "Turns Taken: " + turnsTaken; //Puts the string together
     document.getElementById("turnCounter").innerHTML = turnsTakenString; //Updates the html in real time
-}
+}*/
 
-function playerOptions() {
+/*function playerOptions() {
     exampleName = "Ready Player One";
     var person = prompt("Please enter your name:", exampleName);
     if (person == null || person == "" || person == exampleName) {
@@ -209,9 +209,9 @@ function playerOptions() {
     }
     //document.getElementById("playerName").innerHTML = playerName; //Puts the name into the HTML ID Tag playerName
     //newGame();
-}
+}*/
 
-function results() {
+/*function results() {
     //leaderArray[7][1] = playerName;
     //leaderArray[7][0] = turnsTaken;
     var newScore = turnsTaken;
@@ -311,4 +311,4 @@ function results() {
     updateLeaderboard += "                        <\/table>";
     i = 0;
     document.getElementById("score_area").innerHTML = updateLeaderboard;
-}
+}*/

@@ -1,4 +1,3 @@
-debugger;
 //Global Scope Variables
 var cardArray = []; //Empty array
 var cardValues = []; //Empty array
@@ -17,16 +16,22 @@ function init() {
     cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
     leaderArray = [
-        [999, "aaa"],
-        [999, "bbb"],
-        [999, "ccc"],
-        [999, "ddd"],
-        [999, "eee"],
-        [999, "fff"],
-        [999, "ggg"],
-        [999, "hhh"]
+        [20, "aaa"],
+        [30, "bbb"],
+        [40, "ccc"],
+        [50, "ddd"],
+        [60, "eee"],
+        [70, "fff"],
+        [80, "ggg"],
+        [90, "hhh"]
     ]; //Multidimensional Array for the player names and scores
     //Update score_area with Leaderboard
+    let sortedArray = leaderArray.sort((a, b) => {
+        if (a > b) return 1;
+        else if (b > a) return -1;
+        else return 0;
+        console.log(sortedArray);
+    });
     generateLeaderboard();
     document.getElementById("score_area").innerHTML = updateLeaderboard;
     //Creates the shuffle process for the array
@@ -214,14 +219,13 @@ function playerNameInput() {
 function results() {
     //leaderArray[7][1] = playerName;
     //leaderArray[7][0] = turnsTaken;
-    var newScore = turnsTaken;
-    var oldScore;
-    var newPlayer = playerName;
-    var oldPlayer;
-    var tempPlayer;
-    var tempScore;
     leaderArray.unshift([turnsTaken, playerName]);
-    console.log(leaderArray);
+    let sortedArray = leaderArray.sort((a, b) => {
+        if (a > b) return 1;
+        else if (b > a) return -1;
+        else return 0;
+    });
+
     //Reorder leaderboard
 
     var updateLeaderboard = "";

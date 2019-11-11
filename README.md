@@ -25,6 +25,8 @@ I have completed the basic game where, when you click on 2 matching cards they w
 
 I have added the ability for the Player to add their name, this will be used for the Leaderboard later on.
 
+I have nearly completed the Leaderboard just need to add the ability for it to check to sort on the amount to turns taken.
+
 ### Leaderboard Area
 For the competitive players this allows them to see whos fastest.
 

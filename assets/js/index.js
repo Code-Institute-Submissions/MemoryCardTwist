@@ -10,6 +10,7 @@ var playerName; //Users actual name
 var exampleName; //Default name
 var leaderArray = [];
 var updateLeaderboard = "";
+
 //Function that is run on index.html load up
 function init() {
     //Card values when they are flipped
@@ -135,14 +136,18 @@ function generateLeaderboard() {
 };
 
 function newGame() {
+
     cardFlipped = 0; //Reset Value
     turnsTaken = 0; //Reset Value
     //Calls the shuffle command and adds Divs to the game_area
     var out = '';
+    var randomGuess = '';
     cardArray.cardShuffle();
     for (var i = 0; i < cardArray.length; i++) {
         out += '<div id="card_' + i + '" onclick="cardFlip(this,\'' + cardArray[i] + '\')"></div>';
     }
+    debugger;
+    out += '<span>' + guessingString(10) + '</span>';
     turnsTakenString = ""; //Hides the text so that it doesnt look unsightly
     document.getElementById("turnCounter").innerHTML = turnsTakenString;
     document.getElementById('game_area').innerHTML = out;
@@ -217,8 +222,7 @@ function playerNameInput() {
 }
 
 function results() {
-    //leaderArray[7][1] = playerName;
-    //leaderArray[7][0] = turnsTaken;
+    //Reorder leaderboard
     leaderArray.unshift([turnsTaken, playerName]);
     let sortedArray = leaderArray.sort((a, b) => {
         if (a > b) return 1;
@@ -226,7 +230,7 @@ function results() {
         else return 0;
     });
 
-    //Reorder leaderboard
+
 
     var updateLeaderboard = "";
     updateLeaderboard += "<table class=\"table table-borderless\">";
@@ -315,4 +319,15 @@ function results() {
     updateLeaderboard += "                        <\/table>";
     i = 0;
     document.getElementById("score_area").innerHTML = updateLeaderboard;
+}
+
+function guessingString(length) {
+    debugger;
+    var guessingString = ''
+    var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+
+    for (var i = 0; i < length; i++)
+        guessingString += possible.charAt(Math.floor(Math.random() * possible.length));
+
+    return guessingString;
 }

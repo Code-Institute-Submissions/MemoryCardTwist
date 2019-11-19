@@ -10,6 +10,8 @@ var playerName; //Users actual name
 var exampleName; //Default name
 var leaderArray = [];
 var updateLeaderboard = "";
+var guessesLeft = 3;
+var generatedGuessString = "";
 
 //Function that is run on index.html load up
 function init() {
@@ -139,18 +141,18 @@ function newGame() {
 
     cardFlipped = 0; //Reset Value
     turnsTaken = 0; //Reset Value
+    guessesLeft = 3; //Reset Value
     //Calls the shuffle command and adds Divs to the game_area
     var out = '';
-    var randomGuess = '';
     cardArray.cardShuffle();
     for (var i = 0; i < cardArray.length; i++) {
         out += '<div id="card_' + i + '" onclick="cardFlip(this,\'' + cardArray[i] + '\')"></div>';
     }
-    debugger;
     out += '<span>' + guessingString(10) + '</span>';
     turnsTakenString = ""; //Hides the text so that it doesnt look unsightly
     document.getElementById("turnCounter").innerHTML = turnsTakenString;
     document.getElementById('game_area').innerHTML = out;
+    document.getElementById("guessButton").innerText = "3 Guesses Left";
 };
 
 function cardFlip(card, val) {
@@ -322,12 +324,27 @@ function results() {
 }
 
 function guessingString(length) {
-    debugger;
     var guessingString = ''
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for (var i = 0; i < length; i++)
         guessingString += possible.charAt(Math.floor(Math.random() * possible.length));
-
+    generatedGuessString = guessingString;
     return guessingString;
+}
+
+function guessingTime() {
+    var usersGuess = document.getElementById("userGuessBox").value;
+    var guessStringLeft;
+    if (guessesLeft > 0) {
+        if (generatedGuessString === usersGuess) {
+            playerNameInput(); // Take players name
+            results(); //Leaderboard functions;
+        } else {
+            guessesLeft--
+            guessStringLeft = guessesLeft + " Guesses Left"
+            turnCounting();
+            document.getElementById("guessButton").innerText = guessStringLeft;
+        }
+    }
 }

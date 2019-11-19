@@ -8,10 +8,10 @@ var playerArray = []; //Empty array for player names
 var scoreArray = []; //Empty array for Leaderboard
 var playerName; //Users actual name
 var exampleName; //Default name
-var leaderArray = [];
-var updateLeaderboard = "";
-var guessesLeft = 3;
-var generatedGuessString = "";
+var leaderArray = []; //Empty array
+var updateLeaderboard = ""; //Updates the Leaderboard with fresh code
+var guessesLeft = 3; //Sets guesses to 3, for the quick finish player
+var generatedGuessString = ""; //Empty string
 
 //Function that is run on index.html load up
 function init() {
@@ -153,6 +153,8 @@ function newGame() {
     document.getElementById("turnCounter").innerHTML = turnsTakenString;
     document.getElementById('game_area').innerHTML = out;
     document.getElementById("guessButton").innerText = "3 Guesses Left";
+    document.getElementById("userGuessBox").hidden = false;
+    document.getElementById("guessButton").hidden = false;
 };
 
 function cardFlip(card, val) {
@@ -334,17 +336,23 @@ function guessingString(length) {
 }
 
 function guessingTime() {
-    var usersGuess = document.getElementById("userGuessBox").value;
+    var usersGuess = document.getElementById("userGuessBox").value; //Reads text box with users input in
     var guessStringLeft;
     if (guessesLeft > 0) {
         if (generatedGuessString === usersGuess) {
             playerNameInput(); // Take players name
-            results(); //Leaderboard functions;
+            results(); //Leaderboard functions
         } else {
             guessesLeft--
-            guessStringLeft = guessesLeft + " Guesses Left"
+            if (guessesLeft > 1) { guessStringLeft = guessesLeft + " Guesses Left" } else { guessStringLeft = "Last Guess" }
             turnCounting();
             document.getElementById("guessButton").innerText = guessStringLeft;
         }
     }
+    if (guessStringLeft == 0) {
+        alert("You have no more guesses left!");
+        document.getElementById("userGuessBox").hidden = true;
+        document.getElementById("guessButton").hidden = true;
+    };
+
 }

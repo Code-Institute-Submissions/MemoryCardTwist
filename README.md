@@ -27,8 +27,12 @@ I have added the ability for the Player to add their name, this will be used for
 
 I have nearly completed the Leaderboard just need to add the ability for it to check to sort on the amount to turns taken.
 
+I have completed the Leaderboard, i have also generated the random string and created the function to check that its correct.
+
 ### Leaderboard Area
 For the competitive players this allows them to see whos fastest.
+
+I have used JS to output HTML so that the table is handled in an array before outputting.
 
 ### Dev Area
 This is for the developer aka me to leave some information.

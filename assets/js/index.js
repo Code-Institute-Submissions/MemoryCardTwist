@@ -21,14 +21,14 @@ function init() {
     cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
     leaderArray = [
-        [20, "aaa"],
-        [30, "bbb"],
-        [40, "ccc"],
+        [50, "aaa"],
+        [50, "bbb"],
+        [50, "ccc"],
         [50, "ddd"],
-        [60, "eee"],
-        [70, "fff"],
-        [80, "ggg"],
-        [90, "hhh"]
+        [50, "eee"],
+        [50, "fff"],
+        [50, "ggg"],
+        [50, "hhh"]
     ]; //Multidimensional Array for the player names and scores
     //Update score_area with Leaderboard
     let sortedArray = leaderArray.sort((a, b) => {

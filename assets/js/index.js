@@ -299,7 +299,5 @@ function generateHTML() {
     generateHTML += "                    <li>Second Way<\/li>";
     generateHTML += "                    <p>As you start to match the cards, there will be a random string that will appear. If you think what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
     generateHTML += "                <\/ul>";
-    generateHTML += "                <h2>Additional Information<\/h2>";
-    generateHTML += "                <p>On clicking the \"New Game\" button, you will be asked to enter your name.<\/p>";
     document.getElementById("game_area").innerHTML = generateHTML;
 }

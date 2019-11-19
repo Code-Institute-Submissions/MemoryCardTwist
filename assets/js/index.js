@@ -16,6 +16,7 @@ var generatedGuessString = ""; //Empty string
 //Function that is run on index.html load up
 function init() {
     debugger;
+    generateHTML();
     //Card values when they are flipped
     cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
@@ -152,10 +153,10 @@ function results() {
 
 
     debugger;
-    var updateLeaderboard = "";
+    updateLeaderboard = "";
     generateLeaderboard();
     i = 0;
-    document.getElementById("score_area").innerHTML = updateLeaderboard;
+    //document.getElementById("score_area").innerHTML = updateLeaderboard;
 }
 
 function guessingString(length) {
@@ -285,4 +286,20 @@ function hideGuess() {
 function showGuess() {
     document.getElementById("userGuessBox").hidden = false;
     document.getElementById("guessButton").hidden = false;
+}
+
+function generateHTML() {
+    var generateHTML = "";
+    generateHTML += "<h1 class=\"central\">Welcome To Memory Card Twist<\/h1>";
+    generateHTML += "                <h2>Basics<\/h2>";
+    generateHTML += "                <p>There are two ways to win this game:<\/p>";
+    generateHTML += "                <ul>";
+    generateHTML += "                    <li>First Way<\/li>";
+    generateHTML += "                    <p>Match all the cards and clear the board.<\/p>";
+    generateHTML += "                    <li>Second Way<\/li>";
+    generateHTML += "                    <p>As you start to match the cards, there will be a random string that will appear. If you think what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
+    generateHTML += "                <\/ul>";
+    generateHTML += "                <h2>Additional Information<\/h2>";
+    generateHTML += "                <p>On clicking the \"New Game\" button, you will be asked to enter your name.<\/p>";
+    document.getElementById("game_area").innerHTML = generateHTML;
 }

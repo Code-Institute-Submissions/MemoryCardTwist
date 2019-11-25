@@ -93,5 +93,102 @@
         background-color: orangered;
     }
     /*----Media Queries----*/
+    /*Small devices (landscape phones, 576px and up)*/
     
-    @media(min-width: 992px) {}
+    @media (min-width: 576px) {
+        #game_area>div {
+            /* Tidying up align ment*/
+            position: relative;
+            left: 9px;
+            top: 10px;
+            background: radial-gradient(black, #007bff);
+            background-size: cover;
+            border: black 1px solid;
+            width: 24%;
+            height: 16%;
+            float: left;
+            margin: 1px;
+            padding: 5px;
+            padding-top: 14px;
+            font-size: 55px;
+            cursor: pointer;
+            text-align: center;
+            z-index: 1;
+        }
+        #game_area>span {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            font-size: 90px;
+            text-align: center;
+        }
+    }
+    /*Tablet*/
+    
+    @media (min-width: 768px) {
+        #game_area>div {
+            /* Tidying up align ment*/
+            position: relative;
+            left: 9px;
+            top: 10px;
+            background: radial-gradient(pink, #007bff);
+            background-size: cover;
+            border: black 1px solid;
+            width: 24%;
+            height: 16%;
+            float: left;
+            margin: 1px;
+            padding: 5px;
+            padding-top: 40px;
+            font-size: 45px;
+            cursor: pointer;
+            text-align: center;
+            z-index: 1;
+        }
+        #game_area>span {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            font-size: 70px;
+            text-align: center;
+        }
+    }
+    /*Desktop*/
+    
+    @media(min-width: 992px) {
+        #game_area>div {
+            /* Tidying up align ment*/
+            position: relative;
+            left: 9px;
+            top: 10px;
+            background: radial-gradient(lightblue, #007bff);
+            background-size: cover;
+            border: black 1px solid;
+            width: 24%;
+            height: 16%;
+            float: left;
+            margin: 1px;
+            padding: 5px;
+            padding-top: 14px;
+            font-size: 55px;
+            cursor: pointer;
+            text-align: center;
+            z-index: 1;
+        }
+        #game_area>span {
+            margin: 0;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 0;
+            font-size: 90px;
+            text-align: center;
+        }
+    }

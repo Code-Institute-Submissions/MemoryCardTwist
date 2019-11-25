@@ -52,10 +52,7 @@ function init() {
     };
 };
 
-
-
 function newGame() {
-
     cardFlipped = 0; //Reset Value
     turnsTaken = 0; //Reset Value
     guessesLeft = 3; //Reset Value
@@ -71,7 +68,7 @@ function newGame() {
     document.getElementById('game_area').innerHTML = out;
     document.getElementById("guessButton").innerText = "3 Guesses Left";
     showGuess();
-    console.log(generatedGuessString);
+    //console.log(generatedGuessString);
 };
 
 function cardFlip(card, val) {
@@ -151,8 +148,6 @@ function results() {
         else return 0;
     });
 
-
-    debugger;
     updateLeaderboard = "";
     generateLeaderboard();
     i = 0;
@@ -177,8 +172,8 @@ function guessingTime() {
             playerNameInput(); // Take players name
             results(); //Leaderboard functions
         } else {
-            guessesLeft--
-            if (guessesLeft > 1) { guessStringLeft = guessesLeft + " Guesses Left" } else { guessStringLeft = "Last Guess" }
+            guessesLeft--;
+            if (guessesLeft > 1) { guessStringLeft = guessesLeft + " Guesses Left"; } else { guessStringLeft = "Last Guess"; }
             turnCounting();
             document.getElementById("guessButton").innerText = guessStringLeft;
         }
@@ -297,7 +292,7 @@ function generateHTML() {
     generateHTML += "                    <li>First Way<\/li>";
     generateHTML += "                    <p>Match all the cards and clear the board.<\/p>";
     generateHTML += "                    <li>Second Way<\/li>";
-    generateHTML += "                    <p>As you start to match the cards, there will be a random string that will appear. If you think what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
+    generateHTML += "                    <p>As you start to match the cards, there will be a random string that will appear. If you think you know what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
     generateHTML += "                <\/ul>";
     document.getElementById("game_area").innerHTML = generateHTML;
 }

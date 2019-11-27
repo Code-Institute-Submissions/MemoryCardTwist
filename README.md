@@ -33,6 +33,8 @@ I have completed the Leaderboard, i have also generated the random string and cr
 For the competitive players this allows them to see whos fastest.
 
 I have used JS to output HTML so that the table is handled in an array before outputting.
+ 
+I have currently completed what i need to do with the Leaderboard, however I will try to improve the code.
 
 ### Dev Area
 This is for the developer aka me to leave some information.
@@ -41,3 +43,9 @@ This is for the developer aka me to leave some information.
 
 ### Adam Khoury
 He created a video tutorial for understanding of how to build the initial game.
+
+#Things to do
+I currently need to look at the media queries
+look at improving the code for the leaderboard JS
+working on the Readme
+Jasmine testing

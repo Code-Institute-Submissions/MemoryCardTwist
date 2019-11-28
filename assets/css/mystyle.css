@@ -1,186 +1,92 @@
-    /*----Fonts----*/
-    /*----Colours----*/
-    
-    .text-white {
-        color: white;
-    }
-    /*----Alignment----*/
-    
-    h2 {
-        text-align: center;
-        padding-top: 10px;
-    }
-    
-    h4 {
-        text-align: center;
-    }
-    
-    p {
-        text-align: center;
-    }
-    
-    .navbar-text {
-        padding-right: 10px;
-        padding-left: 10px;
-    }
-    
-    .central {
-        text-align: center;
-    }
-    /*----Areas----*/
-    
-    body {
-        background-color: #007bff;
-    }
-    
-    .row {
-        margin-left: 0px;
-        margin-right: 0px;
-    }
-    
-    .gameAreaSetup {
-        border: black 1px solid;
-        width: 100%;
-        padding: 10px;
-        margin: 0px auto;
-        padding-left: 0px;
-    }
-    
-    .scoreAreaSetup {
-        border: black 1px solid;
-        width: 100%;
-        margin: 0px auto;
-    }
-    
-    #game_area {
-        background-color: cornflowerblue;
-        height: 550px;
-    }
-    
-    #score_area {
-        background-color: lightblue;
-        height: 58.8vh;
-        margin-bottom: 10px;
-    }
-    
-    #dev_area {
-        background-color: rgb(125, 170, 216);
-        height: 30vh;
-    }
-    /*----Card Formating----*/
-    
-    #game_area>div {
-        /* Tidying up align ment*/
-        position: relative;
-        left: 9px;
-        top: 10px;
-        background: radial-gradient(lightblue, #007bff);
-        background-size: cover;
-        border: black 1px solid;
-        width: 24%;
-        height: 16%;
-        float: left;
-        margin: 1px;
-        padding: 5px;
-        padding-top: 33px;
-        font-size: 23px;
-        cursor: pointer;
-        text-align: center;
-        z-index: 1;
-    }
-    
-    #game_area>span {
-        margin: 0;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-        z-index: 0;
-        font-size: 35px;
-        text-align: center;
-    }
-    /*----Table Formatting----*/
-    
-    .gold {
-        background-color: gold;
-    }
-    
-    .silver {
-        background-color: silver;
-    }
-    
-    .bronze {
-        background-color: orangered;
-    }
-    /*----Media Queries----*/
-    /*Tablet*/
-    
-    @media (min-width: 768px) {
-        #game_area>div {
-            /* Tidying up align ment*/
-            position: relative;
-            left: 9px;
-            top: 10px;
-            background: radial-gradient(pink, #007bff);
-            background-size: cover;
-            border: black 1px solid;
-            width: 24%;
-            height: 16%;
-            float: left;
-            margin: 1px;
-            padding: 5px;
-            padding-top: 20px;
-            font-size: 45px;
-            cursor: pointer;
-            text-align: center;
-            z-index: 1;
+            /*----Fonts----*/
+        /*----Colours----*/
+        
+        .text-white {
+            color: white;
         }
-        #game_area>span {
-            margin: 0;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            z-index: 0;
-            font-size: 70px;
+        /*----Alignment----*/
+        
+        h2 {
+            text-align: center;
+            padding-top: 10px;
+        }
+        
+        h4 {
             text-align: center;
         }
-        .gameAreaSetup {
-            border: black 1px solid;
-            width: 100%;
-            padding: 10px;
-            margin: 0px auto;
+        
+        p {
+            text-align: center;
             padding-left: 5px;
+            padding-right: 5px;
         }
-        .scoreAreaSetup {
+        
+        .navbar-text {
+            padding-right: 10px;
+            padding-left: 10px;
+        }
+        
+        .central {
+            text-align: center;
+        }
+        /*----Areas----*/
+        
+        body {
+            background-color: #007bff;
+            text-align: center;
+        }
+        
+        .row {
+            margin-left: 0px;
+            margin-right: 0px;
+        }
+        
+        .gameAreaSetup {
             border: black 1px solid;
             width: 100%;
             padding: 10px;
             margin: 0px auto;
+            margin-bottom: 10px;
         }
+        
+        .scoreAreaSetup {
+            border: black 1px solid;
+            width: 100%;
+            margin: 0px auto;
+            padding-top: 0px;
+            padding-left: 0px;
+        }
+        
+        .streamlinePhones {
+            padding-left: 0px;
+            padding-right: 0px;
+        }
+        
         #game_area {
             background-color: cornflowerblue;
-            height: 90vh;
+            height: 550px;
+            padding-top: 0px;
+            padding-left: 0px;
         }
+        
         #score_area {
             background-color: lightblue;
             height: 58.8vh;
             margin-bottom: 10px;
         }
+        
         #dev_area {
             background-color: rgb(125, 170, 216);
             height: 30vh;
         }
-    }
-    /*Desktop*/
-    
-    @media(min-width: 992px) {
+        /*----Card Formating----*/
+        
         #game_area>div {
             /* Tidying up align ment*/
             position: relative;
             left: 9px;
             top: 10px;
-            background: radial-gradient(black, #007bff);
+            background: radial-gradient(lightblue, #007bff);
             background-size: cover;
             border: black 1px solid;
             width: 24%;
@@ -188,12 +94,13 @@
             float: left;
             margin: 1px;
             padding: 5px;
-            padding-top: 14px;
-            font-size: 55px;
+            padding-top: 33px;
+            font-size: 23px;
             cursor: pointer;
             text-align: center;
             z-index: 1;
         }
+        
         #game_area>span {
             margin: 0;
             position: absolute;
@@ -201,32 +108,149 @@
             left: 50%;
             transform: translate(-50%, -50%);
             z-index: 0;
-            font-size: 90px;
+            font-size: 35px;
             text-align: center;
         }
-        .gameAreaSetup {
-            border: black 1px solid;
-            width: 100%;
-            padding: 10px;
-            margin: 0px auto;
+        /*----Table Formatting----*/
+        
+        .gold {
+            background-color: gold;
         }
-        .scoreAreaSetup {
-            border: black 1px solid;
-            width: 100%;
-            padding: 10px;
-            margin: 0px auto;
+        
+        .silver {
+            background-color: silver;
         }
-        #game_area {
-            background-color: cornflowerblue;
-            height: 90vh;
+        
+        .bronze {
+            background-color: orangered;
         }
-        #score_area {
-            background-color: lightblue;
-            height: 58.8vh;
-            margin-bottom: 10px;
+        /*----Media Queries----*/
+        /*Phones*/
+        /* @media (min-width: 320px) {
+ 
+    }*/
+        /*Tablet*/
+        
+        @media (min-width: 768px) {
+            #game_area>div {
+                /* Tidying up align ment*/
+                position: relative;
+                left: 9px;
+                top: 10px;
+                background: radial-gradient(pink, #007bff);
+                background-size: cover;
+                border: black 1px solid;
+                width: 24%;
+                height: 16%;
+                float: left;
+                margin: 1px;
+                padding: 5px;
+                padding-top: 20px;
+                font-size: 45px;
+                cursor: pointer;
+                text-align: center;
+                z-index: 1;
+            }
+            #game_area>span {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                font-size: 70px;
+                text-align: center;
+            }
+            .gameAreaSetup {
+                border: black 1px solid;
+                width: 100%;
+                padding: 10px;
+                margin: 0px auto;
+                padding-left: 5px;
+                padding-top: 0px;
+            }
+            .scoreAreaSetup {
+                border: black 1px solid;
+                width: 100%;
+                padding: 10px;
+                margin: 0px auto;
+            }
+            .streamlinePhones {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+            #game_area {
+                background-color: cornflowerblue;
+                height: 90vh;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            #score_area {
+                background-color: lightblue;
+                height: 58.8vh;
+                margin-bottom: 10px;
+            }
+            #dev_area {
+                background-color: rgb(125, 170, 216);
+                height: 30vh;
+            }
         }
-        #dev_area {
-            background-color: rgb(125, 170, 216);
-            height: 30vh;
-        }
-    }
+        /*Desktop*/
+        
+        @media(min-width: 992px) {
+            #game_area>div {
+                /* Tidying up align ment*/
+                position: relative;
+                left: 9px;
+                top: 10px;
+                background: radial-gradient(black, #007bff);
+                background-size: cover;
+                border: black 1px solid;
+                width: 24%;
+                height: 16%;
+                float: left;
+                margin: 1px;
+                padding: 5px;
+                padding-top: 14px;
+                font-size: 55px;
+                cursor: pointer;
+                text-align: center;
+                z-index: 1;
+            }
+            #game_area>span {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 0;
+                font-size: 90px;
+                text-align: center;
+            }
+            .gameAreaSetup {
+                border: black 1px solid;
+                width: 100%;
+                padding: 10px;
+                margin: 0px auto;
+            }
+            .scoreAreaSetup {
+                border: black 1px solid;
+                width: 100%;
+                padding: 10px;
+                margin: 0px auto;
+            }
+            #game_area {
+                background-color: cornflowerblue;
+                height: 90vh;
+                padding-top: 10px;
+                padding-left: 10px;
+            }
+            #score_area {
+                background-color: lightblue;
+                height: 58.8vh;
+                margin-bottom: 10px;
+            }
+            #dev_area {
+                background-color: rgb(125, 170, 216);
+                height: 30vh;
+            }

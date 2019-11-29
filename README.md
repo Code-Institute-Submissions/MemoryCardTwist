@@ -39,13 +39,23 @@ I have currently completed what i need to do with the Leaderboard, however I wil
 ### Dev Area
 This is for the developer aka me to leave some information.
 
+# Changes
+
+### Nav Bar
+I have taken out the timer as this could be added in at a later date for the really competitive players.  I thought it was best just to stick to one way of recording the winners outcome.  Plus I thought it might be confusing in the leaderboard.
+
 ## Support
 
 ### Adam Khoury
 He created a video tutorial for understanding of how to build the initial game.
 
-#Things to do
-I currently need to look at the media queries
+### Fireship
+https://youtu.be/u21W_tfPVrY - This is Tips on how to use Debugger in my IDE Visual Studio Code.  This elimated the need for Jasmine Testing.
+
+### Slack
+Thank you Kitty_Lead for some improvements that I hadn;'t thought of.
+
+# Things to do
 look at improving the code for the leaderboard JS
 working on the Readme
 Jasmine testing

@@ -56,6 +56,8 @@ This is for the developer aka me to leave some information.
 I have taken out the timer as this could be added in at a later date for the really competitive players.  I thought it was best just to stick to one way of recording the winners outcome.  Plus I thought it might be confusing in the leaderboard.
 
 # Testing
+To test my Media Queries for sizing on different devices, I made the tiles change colour so that I could accurately see what media queries were being called.
+
 I have used Jasmine testing in checking that when people complete the game that they can enter their names.
 
 I struggled with the Jasmine testing because I debugged most of the errors on the go using the debugger function in Chrome.

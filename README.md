@@ -84,6 +84,10 @@ However I have changed the welcoming text after the page loads.
 
 I have fixed the few errors that were found, however the four remaining errors that have been found are the result of the Bootstrap NavBar.  So I have left them in because thats how the examples on the Bootstrap Documentation are shown.
 
+17/12/2019 
+
+I have fixed the HTML so it now validates and I believe the code still works from the interaction I have had with the new code.
+
 ## CSS Validation
 16/12/2019 - https://jigsaw.w3.org/css-validator/
 

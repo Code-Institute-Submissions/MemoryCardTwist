@@ -9,6 +9,7 @@ var scoreArray = []; //Empty array for Leaderboard
 var playerName; //Users actual name
 var exampleName; //Default name
 var leaderArray = []; //Empty array
+var sortedArray = []; //Empty Array
 var updateLeaderboard = ""; //Updates the Leaderboard with fresh code
 var guessesLeft = 3; //Sets guesses to 3, for the quick finish player
 var generatedGuessString = ""; //Empty string
@@ -21,9 +22,9 @@ function init() {
     cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
     leaderArray = [
-        [120, "aaa"],
-        [110, "bbb"],
-        [100, "ccc"],
+        [99, "aaa"],
+        [98, "bbb"],
+        [97, "ccc"],
         [90, "ddd"],
         [80, "eee"],
         [70, "fff"],
@@ -68,7 +69,6 @@ function newGame() {
     document.getElementById('game_area').innerHTML = out;
     document.getElementById("guessButton").innerText = "3 Guesses Left";
     showGuess();
-    results();
     //console.log(generatedGuessString);
 };
 

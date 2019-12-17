@@ -45,6 +45,8 @@ I have used JS to output HTML so that the table is handled in an array before ou
  
 I have currently completed what i need to do with the Leaderboard, however I will try to improve the code.
 
+17/12/19 - Currently just had to change some JS coding, as the Leaderboard array was reading my scores as strings and they should of been numbers.
+
 ### Dev Area
 This is for the developer aka me to leave some information.
 

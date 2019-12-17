@@ -283,7 +283,7 @@ function showGuess() {
     document.getElementById("guessButton").hidden = false;
 }
 
-function generateHTML() {
+/*function generateHTML() {
     var generateHTML = "";
     generateHTML += "<h1 class=\"central\">Welcome To Memory Card Twist<\/h1>";
     generateHTML += "                <h2>The Basics<\/h2>";
@@ -293,4 +293,7 @@ function generateHTML() {
     generateHTML += "                    <h4>Second Way<\/h4>";
     generateHTML += "                    <p>As you start to match the cards, there will be a random string that will appear. If you think you know what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
     document.getElementById("game_area").innerHTML = generateHTML;
+}*/
+function generateHTML() {
+    document.getElementById("game_area").innerHTML = "<h1 class=\"central\">Welcome To Memory Card Twist<\/h1><h2>The Basics<\/h2><p>There are two ways to win this game:<\/p><h4>First Way<\/h4><p>Match all the cards and clear the board.<\/p><h4>Second Way<\/h4><p>As you start to match the cards, there will be a random string that will appear. If you think you know what the string is then you can enter it as a guess. You get three guesses before that option is disabled. So make them count.<\/p>";
 }

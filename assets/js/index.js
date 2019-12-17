@@ -21,13 +21,13 @@ function init() {
     cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
     leaderArray = [
-        [50, "aaa"],
-        [50, "bbb"],
-        [50, "ccc"],
-        [50, "ddd"],
-        [50, "eee"],
-        [50, "fff"],
-        [50, "ggg"],
+        [120, "aaa"],
+        [110, "bbb"],
+        [100, "ccc"],
+        [90, "ddd"],
+        [80, "eee"],
+        [70, "fff"],
+        [60, "ggg"],
         [50, "hhh"]
     ]; //Multidimensional Array for the player names and scores
     //Update score_area with Leaderboard
@@ -68,6 +68,7 @@ function newGame() {
     document.getElementById('game_area').innerHTML = out;
     document.getElementById("guessButton").innerText = "3 Guesses Left";
     showGuess();
+    results();
     //console.log(generatedGuessString);
 };
 
@@ -104,10 +105,10 @@ function cardFlip(card, val) {
                     // Flip the 2 tiles back over
                     var card1 = document.getElementById(cardIds[0]);
                     var card2 = document.getElementById(cardIds[1]);
-                    card1.style.background = 'radial-gradient(lightblue, #007bff)';
+                    card1.style.background = 'radial-gradient(cornflowerblue, #007bff)';
                     card1.style.backgroundSize = "cover";
                     card1.innerHTML = "";
-                    card2.style.background = 'radial-gradient(lightblue, #007bff)';
+                    card2.style.background = 'radial-gradient(cornflowerblue, #007bff)';
                     card2.style.backgroundSize = "cover";
                     card2.innerHTML = "";
                     cardValues = []; // Clear array

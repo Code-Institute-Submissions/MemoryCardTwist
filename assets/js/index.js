@@ -124,7 +124,6 @@ function turnCounting() {
     //Counting the turns
     var turnsTakenString; //variable
     turnsTaken++; //Add 1 to the variable
-    turnsTaken.toString(); //Convert from number to string
     turnsTakenString = "Turns Taken: " + turnsTaken; //Puts the string together
     document.getElementById("turnCounter").innerHTML = turnsTakenString; //Updates the html in real time
 }

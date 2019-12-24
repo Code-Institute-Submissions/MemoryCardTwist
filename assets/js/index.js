@@ -1,5 +1,4 @@
 //Global Scope Variables
-var cardArray = []; //Empty array
 var cardValues = []; //Empty array
 var cardIds = []; //Empty array
 var cardFlipped = []; //Empty array
@@ -10,22 +9,19 @@ var playerName; //Users actual name
 var exampleName; //Default name
 var leaderArray = []; //Empty array
 var sortedArray = []; //Empty Array
-
 var guessesLeft = 3; //Sets guesses to 3, for the quick finish player
 var generatedGuessString = ""; //Empty string
 
 //Function that is run on index.html load up
 function init() {
     generateHTML();
-    //Card values when they are flipped
-    cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     //Default leaderboard values
     leaderArray = [
         [99, "aaa"],
         [98, "bbb"],
         [97, "ccc"],
-        [90, "ddd"],
-        [80, "eee"],
+        [96, "ddd"],
+        [95, "eee"],
         [70, "fff"],
         [60, "ggg"],
         [50, "hhh"]
@@ -53,6 +49,7 @@ function init() {
 };
 
 function newGame() {
+    var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
     cardFlipped = 0; //Reset Value
     turnsTaken = 0; //Reset Value
     guessesLeft = 3; //Reset Value
@@ -73,6 +70,7 @@ function newGame() {
 
 function cardFlip(card, val) {
     //Flipping Cards
+
     if (card.innerHTML == "" && cardValues.length < 2) { //If the cards match
         card.style.background = '#FFF';
         card.style.backgroundImage = 'radial-gradient(lightblue, cornflowerblue)'; //Displays a circle of light blue, behind the text
@@ -186,27 +184,43 @@ function guessingTime() {
 }
 
 function generateLeaderboard() {
-    var updateLeaderboard = ""; //Updates the Leaderboard with fresh code
-    updateLeaderboard += "<table class=\"table table-borderless\">";
-    updateLeaderboard += "                            <caption>List of scores from different players.<\/caption>";
-    updateLeaderboard += "                            <thead class=\"thead-dark\">";
-    updateLeaderboard += "                                <tr class=\"table-info\">";
-    updateLeaderboard += "                                    <th scope=\"col\">#<\/th>";
-    updateLeaderboard += "                                    <th scope=\"col\">Name<\/th>";
-    updateLeaderboard += "                                    <th scope=\"col\">Turns<\/th>";
-    updateLeaderboard += "                                <\/tr>";
-    updateLeaderboard += "                            <\/thead>";
-    updateLeaderboard += "                            <tbody>";
-    updateLeaderboard += "                                <tr class=\"table gold\">";
-    updateLeaderboard += "                                    <th scope=\"row\">1<\/th>";
-    updateLeaderboard += "                                    <td>"
-    updateLeaderboard += leaderArray[0][1];
+    // var updateLeaderboard += "<table class=\"table table-borderless\">
+    var i = 8; //Number of Leaderboard Entries
+    var x = 0; //Table Row Number
+    var y = 0; //First Leader Array Position
+    var z = 1; //Second Leader Array Position
+    debugger;
+    var updateLeaderboard = "<table class=\"table table-borderless\"><caption>List of scores from different players.<\/caption><thead class=\"thead-dark\"><tr class=\"table-info\"><th scope=\"col\">#<\/th><th scope=\"col\">Name<\/th><th scope=\"col\">Turns<\/th><\/tr><\/thead><tbody>";
+    while (x < i) { //Makes sure there are enough rows for the table
+        var tableBoard = "<th scope=\"row\">";
+        updateLeaderboard += "<tr>";
+        x++;
+        tableBoard += x;
+        tableBoard += "<\/th><td>";
+        updateLeaderboard += tableBoard;
+        //while (y < i) {
+
+        updateLeaderboard += leaderArray[y][z];
+        z--;
+        updateLeaderboard += "<\/td><td>";
+        updateLeaderboard += leaderArray[y][z];
+        z++;
+        y++;
+        updateLeaderboard += "<\/td><\/tr>";
+        //}
+
+        console.log(updateLeaderboard);
+    }
+    updateLeaderboard += "<\/tbody><\/table>";
+    //updateLeaderboard += "                                <tr class=\"table gold\">";
+
+    /*updateLeaderboard += leaderArray[0][1];
     updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                    <td>"
     updateLeaderboard += leaderArray[0][0];
     updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
-    updateLeaderboard += "                                <tr class=\"table silver\">";
+    //updateLeaderboard += "                                <tr class=\"table silver\">";
     updateLeaderboard += "                                    <th scope=\"row\">2<\/th>";
     updateLeaderboard += "                                    <td>"
     updateLeaderboard += leaderArray[1][1];
@@ -215,7 +229,7 @@ function generateLeaderboard() {
     updateLeaderboard += leaderArray[1][0];
     updateLeaderboard += "<\/td>";
     updateLeaderboard += "                               <\/tr>";
-    updateLeaderboard += "                                <tr class=\"table bronze\">";
+    //updateLeaderboard += "                                <tr class=\"table bronze\">";
     updateLeaderboard += "                                    <th scope=\"row\">3<\/th>";
     updateLeaderboard += "                                    <td>"
     updateLeaderboard += leaderArray[2][1];
@@ -270,8 +284,9 @@ function generateLeaderboard() {
     updateLeaderboard += "<\/td>";
     updateLeaderboard += "                                <\/tr>";
     updateLeaderboard += "                            <\/tbody>";
-    updateLeaderboard += "                        <\/table>";
+    updateLeaderboard += "                        <\/table>";*/
     document.getElementById("score_area").innerHTML = updateLeaderboard;
+
 };
 
 function hideGuess() {

@@ -47,6 +47,8 @@ I have currently completed what i need to do with the Leaderboard, however I wil
 
 17/12/19 - Currently just had to change some JS coding, as the Leaderboard array was reading my scores as strings and they should of been numbers.
 
+24/12/19 - Finally got my leaderboard into a While Loop.
+
 ### Dev Area
 This is for the developer aka me to leave some information.
 

@@ -96,6 +96,7 @@ However I have changed the welcoming text after the page loads.
 I have fixed the sorting issue, because even through the Array objects were integers.  It would sort them Alphanumerically.
 
 ## Jasmine testing - Completed 16/12/2019
+I tested to make sure the player name outputs as it should.
 
 ## Html Validation
 16/12/2019 - https://validator.w3.org/

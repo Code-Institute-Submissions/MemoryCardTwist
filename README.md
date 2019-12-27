@@ -83,6 +83,10 @@ These are the things that were mentioned by my mentor.
 
 However I have changed the welcoming text after the page loads.
 
+27/12/19 - I have made the Leaderboard into a looping function so that it can be changed to either more than or less than the default 8 entries.
+
+I have fixed the sorting issue, because even through the Array objects were integers.  It would sort them Alphanumerically.
+
 ## Jasmine testing - Completed 16/12/2019
 
 ## Html Validation

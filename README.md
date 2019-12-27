@@ -14,9 +14,6 @@ Either by matching all the cards, or guessing a String of Characters that will b
 
 # Sources
 
-## Mockup
-https://jjackson19862017.github.io/MemoryCardTwist/assets/wireframe/MemoryCardJava.pdf
-
 ## Bootstrap
 I will be using Bootstrap Version 4.3, I have linked the css and js sources into my index.html
 

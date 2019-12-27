@@ -147,7 +147,6 @@ function results() {
         else if (a > b) return -1;
         else return 0;
     });
-    console.log(leaderArray);
     console.log(sortedArray);
     updateLeaderboard = "";
     generateLeaderboard();
@@ -180,7 +179,7 @@ function guessingTime() {
             document.getElementById("guessButton").innerText = guessStringLeft;
         }
     }
-    if (guessStringLeft == 0) {
+    if (guessesLeft === 0) {
         alert("You have no more guesses left!");
         hideGuess();
     };

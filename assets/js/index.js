@@ -1,4 +1,3 @@
-//Global Scope Variables
 var cardArray = ['0001', '0001', '0010', '0010', '0011', '0011', '0100', '0100', '0101', '0101', '0110', '0110', '0111', '0111', '1000', '1000', '1001', '1001', '1010', '1010', '1011', '1011', '1100', '1100']; //Values that will appear when the card is clicked on.
 
 var cardValues = []; //Empty array
@@ -10,7 +9,7 @@ var scoreArray = []; //Empty array for Leaderboard
 var playerName; //Users actual name
 var exampleName; //Default name
 var leaderArray = []; //Empty array
-var sortedArray = []; //Empty Array
+//var sortedArray = []; //Empty Array
 var guessesLeft = 3; //Sets guesses to 3, for the quick finish player
 var generatedGuessString = ""; //Empty string
 
@@ -49,7 +48,7 @@ function init() {
             this[n] = temp;
         }
     };
-};
+}
 
 function newGame() {
     cardFlipped = 0; //Reset Value
@@ -68,7 +67,7 @@ function newGame() {
     document.getElementById("guessButton").innerText = "3 Guesses Left";
     showGuess();
     //console.log(generatedGuessString);
-};
+}
 
 function cardFlip(card, val) {
     //Flipping Cards
@@ -156,7 +155,7 @@ function results() {
 }
 
 function guessingString(length) {
-    var guessingString = ''
+    var guessingString = '';
     var possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
 
     for (var i = 0; i < length; i++)
@@ -182,7 +181,7 @@ function guessingTime() {
     if (guessesLeft === 0) {
         alert("You have no more guesses left!");
         hideGuess();
-    };
+    }
 
 }
 
@@ -211,7 +210,7 @@ function generateLeaderboard() {
     updateLeaderboard += "<\/tbody><\/table>";
     console.log(isNaN(leaderArray[2][0]));
     document.getElementById("score_area").innerHTML = updateLeaderboard;
-};
+}
 
 function hideGuess() {
     document.getElementById("userGuessBox").hidden = true;

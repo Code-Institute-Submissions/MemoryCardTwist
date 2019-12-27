@@ -45,9 +45,17 @@ I have used JS to output HTML so that the table is handled in an array before ou
  
 I have currently completed what i need to do with the Leaderboard, however I will try to improve the code.
 
+16/12/19 - Looked to streamline the code however from a readability point of view for myself I have left the Leaderboard as it is.
+
+However I have changed the welcoming text after the page loads.
+
 17/12/19 - Currently just had to change some JS coding, as the Leaderboard array was reading my scores as strings and they should of been numbers.
 
 24/12/19 - Finally got my leaderboard into a While Loop.
+
+27/12/19 - I have made the Leaderboard into a looping function so that it can be changed to either more than or less than the default 8 entries.
+
+I have fixed the sorting issue, because even through the Array objects were integers.  It would sort them Alphanumerically.
 
 ### Dev Area
 This is for the developer aka me to leave some information.
@@ -102,3 +110,11 @@ I have fixed the HTML so it now validates and I believe the code still works fro
 16/12/2019 - https://jigsaw.w3.org/css-validator/
 
 There are no errors.
+
+# My Comments
+I have really struggled with this project, however I now do have a better understanding of Java.
+
+How to do things, and change things in the browser.
+
+I have also learnt a great deal about the program that I use which is 
+"Visual Code Studio" - https://code.visualstudio.com/
